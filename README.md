@@ -4,7 +4,7 @@ simple samples of riverpod
 
 ## Getting Started
 
-branch 'sample1' : loading list of files with riverpod and freezed
+branch 'sample1' : loading list of products with riverpod and freezed
 
 <!--
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
