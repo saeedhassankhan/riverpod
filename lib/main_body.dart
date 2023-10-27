@@ -60,13 +60,13 @@ class MainBody extends ConsumerWidget {
                     margin: const EdgeInsets.fromLTRB(16, 0, 0, 0),
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      //color: isInCart ? Colors.red : Colors.green,
+
                         borderRadius: BorderRadius.circular(8)),
                     child: GestureDetector(
                       onTap: () =>
-                      {}, // isInCart ? storeController.removeFromCart(product) : storeController.addToCartList(product),
+                      {},
                       child: const Text(
-                        "", //storeController.isInCart(product) ? tr.remove_from_cart : tr.add_to_cart,
+                        "",
                         style: TextStyle(color: Colors.white),
                       ),
                     ))
