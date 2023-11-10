@@ -5,11 +5,11 @@ part 'products.freezed.dart';
 
 part 'products.g.dart';
 
-@freezed
+@unfreezed
 class Products with _$Products {
-  const factory Products({required List<Product> products}) = _Products;
+  factory Products({required  List<Product> products}) = _Products;
 
-  factory Products.fromJson(Map<String, Object?> json) =>
+  factory Products.fromJson (Map<String, Object?> json) =>
       _$ProductsFromJson(json);
 }
 

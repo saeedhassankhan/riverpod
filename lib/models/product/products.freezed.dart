@@ -21,6 +21,7 @@ Products _$ProductsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Products {
   List<Product> get products => throw _privateConstructorUsedError;
+  set products(List<Product> value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -86,7 +87,7 @@ class __$$ProductsImplCopyWithImpl<$Res>
   }) {
     return _then(_$ProductsImpl(
       products: null == products
-          ? _value._products
+          ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
     ));
@@ -96,19 +97,13 @@ class __$$ProductsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProductsImpl with DiagnosticableTreeMixin implements _Products {
-  const _$ProductsImpl({required final List<Product> products})
-      : _products = products;
+  _$ProductsImpl({required this.products});
 
   factory _$ProductsImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductsImplFromJson(json);
 
-  final List<Product> _products;
   @override
-  List<Product> get products {
-    if (_products is EqualUnmodifiableListView) return _products;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_products);
-  }
+  List<Product> products;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -122,19 +117,6 @@ class _$ProductsImpl with DiagnosticableTreeMixin implements _Products {
       ..add(DiagnosticsProperty('type', 'Products'))
       ..add(DiagnosticsProperty('products', products));
   }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductsImpl &&
-            const DeepCollectionEquality().equals(other._products, _products));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
   @override
@@ -151,14 +133,14 @@ class _$ProductsImpl with DiagnosticableTreeMixin implements _Products {
 }
 
 abstract class _Products implements Products {
-  const factory _Products({required final List<Product> products}) =
-      _$ProductsImpl;
+  factory _Products({required List<Product> products}) = _$ProductsImpl;
 
   factory _Products.fromJson(Map<String, dynamic> json) =
       _$ProductsImpl.fromJson;
 
   @override
   List<Product> get products;
+  set products(List<Product> value);
   @override
   @JsonKey(ignore: true)
   _$$ProductsImplCopyWith<_$ProductsImpl> get copyWith =>
