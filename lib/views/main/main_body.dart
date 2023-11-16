@@ -48,27 +48,31 @@ class _ExampleState extends ConsumerState<MainBody> {
   Widget _selectedItemInCartStatus() {
     AsyncValue<ProductDateProvider> products = ref.watch(productListProvider);
 
-    return Container(
-      decoration: const BoxDecoration(color: Colors.blueGrey),
-      padding: const EdgeInsets.all(8),
-      child: GestureDetector(
-          onTap: () =>
-              {ref.read(productListProvider.notifier).goToCartList(context)},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.shopify,
-                color: Colors.white,
-              ),
-              const SizedBox(
-                width: 4,
-              ),
-              Text(
-                  style: const TextStyle(color: Colors.white, fontSize: 16),
-                  "selected items : ${products.value != null ? products.value?.cartListProducts.length : 0}")
-            ],
-          )),
-    );
+    if(products is AsyncData){
+      return Container(
+        decoration: const BoxDecoration(color: Colors.blueGrey),
+        padding: const EdgeInsets.all(8),
+        child: GestureDetector(
+            onTap: () =>
+            {ref.read(productListProvider.notifier).goToCartList(context)},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(
+                  Icons.shopify,
+                  color: Colors.white,
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                    "selected items : ${products.value != null ? products.value?.cartListProducts.length : 0}")
+              ],
+            )),
+      );
+    }
+
+    return const SizedBox();
   }
 }
