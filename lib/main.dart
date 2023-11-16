@@ -18,7 +18,7 @@ class MyApp extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Riverpod sample 1'),
+      home: const MyHomePage(title: 'Riverpod sample 2'),
     );
   }
 }
